@@ -23,7 +23,7 @@ export default function CountryInfo({ params }) {
   useEffect(() => {
     if (countryCode?.countryCode) {
       setIsLoading(true); // loading state
-      fetch(`http://localhost:3001/api/countries/${countryCode.countryCode}`)
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/countries/${countryCode.countryCode}`)
         .then((response) => response.json())
         .then((data) => {
           setCountryData(data);

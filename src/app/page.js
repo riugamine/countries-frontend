@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default async function Home() {
   // Fetching data from the backend
-  const response = await fetch('http://localhost:3001/api/countries');
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/countries`);
   const countries = await response.json();
 
   return (
